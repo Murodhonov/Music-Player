@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFD5F1FC"
+    tools:context=".PlayerFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleX="2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:scaleX="2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/top"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image_card"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="200sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:scaleX="1.1"
+            android:scaleY="1"
+            android:src="@drawable/image_2" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/sound_progress"
+        android:layout_width="275dp"
+        android:layout_height="275dp"
+        app:cpb_background_progressbar_color="#b6bbd8"
+        app:cpb_background_progressbar_width="3dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progressbar_color="#FF0172BB"
+        app:cpb_progressbar_width="5dp"
+        app:cpb_round_border="false"
+        app:layout_constraintBottom_toBottomOf="@id/image_card"
+        app:layout_constraintLeft_toLeftOf="@id/image_card"
+        app:layout_constraintRight_toRightOf="@id/image_card"
+        app:layout_constraintTop_toTopOf="@id/image_card" />
+
+    <TextView
+        android:id="@+id/current_author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="Album"
+        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/image_card"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/current_music_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Album"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/image_card"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/current_author_name" />
+
+    <ImageView
+        android:id="@+id/heart"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="2sp"
+        android:src="@drawable/icons8_heart_outline_30px"
+        app:layout_constraintBottom_toBottomOf="@id/pause2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@id/image_card"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/current_music_name"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="2sp"
+        android:src="@drawable/change"
+        app:layout_constraintBottom_toBottomOf="@id/heart"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/heart"
+        app:layout_constraintTop_toTopOf="@id/heart"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/shuffle"
+        app:layout_constraintBottom_toBottomOf="@id/heart"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@id/heart"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/heart" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/current_music_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/all_song_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/menu2"
+            android:layout_marginLeft="5sp"
+            android:id="@+id/menu_back123"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/prev"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="200sp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintBottom_toBottomOf="@id/minus_30"
+        app:layout_constraintLeft_toRightOf="@id/image_card"
+        app:layout_constraintRight_toLeftOf="@id/minus_30"
+        app:layout_constraintTop_toTopOf="@id/minus_30">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:src="@drawable/ic_back_music"
+            app:tint="#FF0172BB" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/minus_30"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="200sp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/pause2"
+        app:layout_constraintLeft_toRightOf="@id/prev"
+        app:layout_constraintRight_toLeftOf="@id/pause2"
+        app:layout_constraintTop_toTopOf="@id/pause2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:src="@drawable/ic_back_30"
+            app:tint="#FF0172BB" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/next"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="200sp"
+        app:layout_constraintBottom_toBottomOf="@id/plus_30"
+        app:layout_constraintLeft_toRightOf="@id/plus_30"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/plus_30">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/ic_next_music"
+            app:tint="#FF0172BB" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/plus_30"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="200sp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/pause2"
+        app:layout_constraintLeft_toRightOf="@id/pause2"
+        app:layout_constraintRight_toLeftOf="@id/next"
+        app:layout_constraintTop_toTopOf="@id/pause2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:src="@drawable/ic_next_30"
+            app:tint="#FF0172BB" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/pause2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="#FF0172BB"
+        app:cardCornerRadius="200sp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/minus_30"
+        app:layout_constraintRight_toLeftOf="@id/plus_30"
+        app:layout_constraintTop_toBottomOf="@id/heart"
+        app:layout_constraintVertical_bias="0.05">
+
+        <ImageView
+            android:id="@+id/pause"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10sp"
+            android:scaleType="centerCrop"
+            app:tint="@color/white" />
+
+    </androidx.cardview.widget.CardView>
+
+    <SeekBar
+        android:id="@+id/song_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50sp"
+        android:progress="30"
+        android:progressBackgroundTint="@color/white"
+        android:progressBackgroundTintMode="src_in"
+        android:progressTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="5sp"
+        app:layout_constraintVertical_bias="1" />
+
+    <TextView
+        android:id="@+id/current_time_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="05:12"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/song_progress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/song_progress"
+        app:layout_constraintTop_toTopOf="@id/song_progress" />
+
+    <TextView
+        android:id="@+id/current_music_max_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13:27"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/song_progress"
+        app:layout_constraintLeft_toRightOf="@id/song_progress"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/song_progress" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
